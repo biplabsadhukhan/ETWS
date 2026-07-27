@@ -68,25 +68,17 @@ import matplotlib.pyplot as plt
 
 # ---------------- Paths ----------------
 
-input_file = "/home/biplab/coastal_diff_storm_data_1980-2024.parquet"
+input_file = "/ExtraTropicalWinterStorms/Data/coastal_diff_storm_data_1980-2024.parquet"
 
 sla_files = [
     "/home/biplab/sla_file/Eastport_ME.parquet",
     "/home/biplab/sla_file/Portland_ME.parquet",
     "/home/biplab/sla_file/Boston_MA.parquet",
-    "/home/biplab/sla_file/Providence_RI.parquet",
     "/home/biplab/sla_file/Newport_RI.parquet",
-    "/home/biplab/sla_file/Bridgeport_CT.parquet",
-    "/home/biplab/sla_file/Montauk_NY.parquet",
     "/home/biplab/sla_file/The_Battery_NY.parquet",
     "/home/biplab/sla_file/Cape_May_NJ.parquet",
-    "/home/biplab/sla_file/Sandy_Hook_NJ.parquet",
     "/home/biplab/sla_file/Lewes_DE.parquet",
-    "/home/biplab/sla_file/Kiptopeke_VA.parquet",
     "/home/biplab/sla_file/Beaufort_NC.parquet",
-    "/home/biplab/sla_file/Duck_NC.parquet",
-    "/home/biplab/sla_file/Wilmington_NC.parquet",
-    "/home/biplab/sla_file/Charleston_SC.parquet"
 ]
 
 
