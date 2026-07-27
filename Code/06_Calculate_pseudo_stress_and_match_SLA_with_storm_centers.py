@@ -99,22 +99,14 @@ def categorize_direction(bearing):
 # if No lowpass SLA used then sla is generated from ts_calculate_sla_sigma_no_lowpass.py
 #########################################################################
 sla_files = [
-    "/home/biplab/sla_highpass/Eastport_ME_highpass.parquet",
-    "/home/biplab/sla_highpass/Portland_ME_highpass.parquet",
-    "/home/biplab/sla_highpass/Boston_MA_highpass.parquet",
-    "/home/biplab/sla_highpass/Providence_RI_highpass.parquet",
-    "/home/biplab/sla_highpass/Newport_RI_highpass.parquet",
-    "/home/biplab/sla_highpass/Bridgeport_CT_highpass.parquet",
-    "/home/biplab/sla_highpass/Montauk_NY_highpass.parquet",
-    "/home/biplab/sla_highpass/The_Battery_NY_highpass.parquet",
-    "/home/biplab/sla_highpass/Cape_May_NJ_highpass.parquet",
-    "/home/biplab/sla_highpass/Sandy_Hook_NJ_highpass.parquet",
-    "/home/biplab/sla_highpass/Lewes_DE_highpass.parquet",
-    "/home/biplab/sla_highpass/Kiptopeke_VA_highpass.parquet",
-    "/home/biplab/sla_highpass/Beaufort_NC_highpass.parquet",
-    "/home/biplab/sla_highpass/Duck_NC_highpass.parquet",
-    "/home/biplab/sla_highpass/Wilmington_NC_highpass.parquet",
-    "/home/biplab/sla_highpass/Charleston_SC_highpass.parquet"
+    "/ExtraTropicalWinterStorms/Code/Data/sla_highpass/Eastport_ME_highpass.parquet",
+    "/ExtraTropicalWinterStorms/Code/Data/sla_highpass/Portland_ME_highpass.parquet",
+    "/ExtraTropicalWinterStorms/Code/Data/Boston_MA_highpass.parquet",
+    "/ExtraTropicalWinterStorms/Code/Data/Newport_RI_highpass.parquet",
+    "/ExtraTropicalWinterStorms/Code/Data/The_Battery_NY_highpass.parquet",
+    "/ExtraTropicalWinterStorms/Code/Data/Cape_May_NJ_highpass.parquet",
+    "/ExtraTropicalWinterStorms/Code/Data/Lewes_DE_highpass.parquet",
+    "/ExtraTropicalWinterStorms/Code/Data/Beaufort_NC_highpass.parquet",
 ]
 
 # Read each parquet and extract only required columns
@@ -130,7 +122,7 @@ all_sla_data = pd.concat(dfs, ignore_index=True)
 ################################################################# Load land-sea mask dataset
 # Load the Parquet file
 
-input_path = "/home/biplab/ig_1/coastal_diff_storm_data_1980-2024.parquet"
+input_path = "ExtraTropicalWinterStorms/Code/Data/coastal_diff_storm_data_1980-2024.parquet"
 
 
 df = pd.read_parquet(input_path)
@@ -148,19 +140,11 @@ stations = {
     "Eastport_ME": (44.9, -67.0),
     "Portland_ME": (43.66, -70.25),
     "Boston_MA": (42.36, -71.05),
-    "Providence_RI": (41.82, -71.41),
     "Newport_RI": (41.49, -71.32),
-    "Bridgeport_CT":(41.18,-73.18),
     "The_Battery_NY":(41.05,-71.96),
-    "Montauk_NY": (40.70, -74.01),
     "Cape_May_NJ": (38.97, -74.96),
-    "Sandy_Hook_NJ":(40.47,-74.01),
     "Lewes_DE":(38.78,-75.12),
-    "Kiptopeke_VA": (37.17, -75.99),
     "Beaufort_NC": (34.72, -76.67),
-    "Duck_NC":(36.18,-75.75),
-    "Wilmington_NC": (34.23, -77.95),
-    "Charleston_SC":(32.78,-79.92)
 }
 
 
@@ -234,6 +218,6 @@ for station, (s_lat, s_lon) in stations.items():
     colname_compass = f"compass_{station}"
     final_df[colname_compass] = final_df[colname_dir].apply(categorize_direction)
 
-output_dir = "/home/biplab/ig_1/"
-final_df.to_parquet(f"{output_dir}stress_distance_all_tidegauges_{start_year}-{end_year}.parquet", index=False)
+output_dir = "ExtraTropicalWinterStorms/Code/Data/"
+final_df.to_parquet(f"{output_dir}Storms_radius_stress_distance_all_tidegauges_{start_year}-{end_year}.parquet", index=False)
 
