@@ -349,7 +349,7 @@ print(f"Number of storms NOT considered: {len(df_not_considered['id_year'].uniqu
 print(f"Number of storms selected: {len(df_new['id_year'].unique())}")
 
 # #specify where the files that will end up in ETWS are located
-output_dir = "/home/biplab/"
+output_dir = "ExtraTropicalWinterStorms/Data/"
 
 df_new.to_parquet(f"{output_dir}coastal_diff_storm_data_{start_year}-{end_year}_intensity.parquet", index=False)
 
