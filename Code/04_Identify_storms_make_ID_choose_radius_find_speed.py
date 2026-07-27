@@ -137,11 +137,11 @@ def cross_section_pressure_simple(slp, storm_center, axis='longitude'):
     return distances, cross_section, xCenter_exp
 ##############################################################################
 # Load SLP datasets
-ds1 = xr.open_dataset('ERA_data/Sea_Pressure/ERA_1980_1989_mslp.nc')
-ds2 = xr.open_dataset('ERA_data/Sea_Pressure/ERA_1990_1999_mslp.nc')
-ds3 = xr.open_dataset('ERA_data/Sea_Pressure/ERA_2000_2007_mslp.nc')
-ds4 = xr.open_dataset('ERA_data/Sea_Pressure/ERA_2008_2015_mslp.nc')
-ds5 = xr.open_dataset('ERA_data/Sea_Pressure/ERA_2016_2024_mslp.nc')
+ds1 = xr.open_dataset('home/biplab/ERA_data/Sea_Pressure/ERA_1980_1989_mslp.nc')
+ds2 = xr.open_dataset('home/biplab/ERA_data/Sea_Pressure/ERA_1990_1999_mslp.nc')
+ds3 = xr.open_dataset('home/biplab/ERA_data/Sea_Pressure/ERA_2000_2007_mslp.nc')
+ds4 = xr.open_dataset('home/biplab/ERA_data/Sea_Pressure/ERA_2008_2015_mslp.nc')
+ds5 = xr.open_dataset('home/biplab/ERA_data/Sea_Pressure/ERA_2016_2024_mslp.nc')
 
 ds_list = [ds.drop_vars("expver", errors="ignore") for ds in [ds1, ds2, ds3, ds4, ds5]]
 ds_aligned = xr.align(*ds_list, join="inner", exclude=["valid_time"])
@@ -153,7 +153,7 @@ ds = ds.sel(
     longitude=slice(-90, -58))
 
 ################################################################# Load land-sea mask dataset
-ds_mask = xr.open_dataset("/data/surge/biplab/ERA_data/Land/ERA_land.nc")
+ds_mask = xr.open_dataset("home/biplab/ERA_data/Land/ERA_land.nc")
 land_sea_mask = ds_mask["lsm"].isel(valid_time=0)
 #####################################################################
 storm_data = []
@@ -349,9 +349,9 @@ print(f"Number of storms NOT considered: {len(df_not_considered['id_year'].uniqu
 print(f"Number of storms selected: {len(df_new['id_year'].unique())}")
 
 # #specify where the files that will end up in ETWS are located
-output_dir = "/home/biplab/Documents/storm_files/ig_1/"
+output_dir = "/home/biplab/"
 
-df_new.to_parquet(f"{output_dir}coastal_diff_storm_data_{start_year}-{end_year}_intensity_test1000.parquet", index=False)
+df_new.to_parquet(f"{output_dir}coastal_diff_storm_data_{start_year}-{end_year}_intensity.parquet", index=False)
 
 
 
