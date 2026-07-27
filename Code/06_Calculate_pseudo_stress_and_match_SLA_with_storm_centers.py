@@ -94,19 +94,16 @@ def categorize_direction(bearing):
     dirs = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]
     ix = round(bearing / 45) % 8
     return dirs[ix]
-###########################################################################################
-# The sla is generated from ts_extract_storms_all_tidegauge_zscore_based.py
-# if No lowpass SLA used then sla is generated from ts_calculate_sla_sigma_no_lowpass.py
-#########################################################################
+
 sla_files = [
-    "/ExtraTropicalWinterStorms/Code/Data/sla_highpass/Eastport_ME_highpass.parquet",
-    "/ExtraTropicalWinterStorms/Code/Data/sla_highpass/Portland_ME_highpass.parquet",
-    "/ExtraTropicalWinterStorms/Code/Data/Boston_MA_highpass.parquet",
-    "/ExtraTropicalWinterStorms/Code/Data/Newport_RI_highpass.parquet",
-    "/ExtraTropicalWinterStorms/Code/Data/The_Battery_NY_highpass.parquet",
-    "/ExtraTropicalWinterStorms/Code/Data/Cape_May_NJ_highpass.parquet",
-    "/ExtraTropicalWinterStorms/Code/Data/Lewes_DE_highpass.parquet",
-    "/ExtraTropicalWinterStorms/Code/Data/Beaufort_NC_highpass.parquet",
+    "/ExtraTropicalWinterStorms/Data/Eastport_ME_highpass.parquet",
+    "/ExtraTropicalWinterStorms/Data/Portland_ME_highpass.parquet",
+    "/ExtraTropicalWinterStorms/Data/Boston_MA_highpass.parquet",
+    "/ExtraTropicalWinterStorms/Data/Newport_RI_highpass.parquet",
+    "/ExtraTropicalWinterStorms/Data/The_Battery_NY_highpass.parquet",
+    "/ExtraTropicalWinterStorms/Data/Cape_May_NJ_highpass.parquet",
+    "/ExtraTropicalWinterStorms/Data/Lewes_DE_highpass.parquet",
+    "/ExtraTropicalWinterStorms/Data/Beaufort_NC_highpass.parquet",
 ]
 
 # Read each parquet and extract only required columns
