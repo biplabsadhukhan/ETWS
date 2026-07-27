@@ -218,6 +218,6 @@ for station, (s_lat, s_lon) in stations.items():
     colname_compass = f"compass_{station}"
     final_df[colname_compass] = final_df[colname_dir].apply(categorize_direction)
 
-output_dir = "ExtraTropicalWinterStorms/Code/Data/"
+output_dir = "ExtraTropicalWinterStorms/Data/"
 final_df.to_parquet(f"{output_dir}Storms_radius_stress_distance_all_tidegauges_{start_year}-{end_year}.parquet", index=False)
 
