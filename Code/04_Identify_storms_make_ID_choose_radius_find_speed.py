@@ -58,11 +58,7 @@ Output:
 
 Author:
     Dr. Biplab Sadhukhan
-
-Created:
     March 26, 2025
-
-GitHub:
     https://github.com/biplabsadhukhan
 
 Notes:
