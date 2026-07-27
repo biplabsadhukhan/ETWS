@@ -83,4 +83,5 @@ request = {
 }
 
 client = cdsapi.Client()
+# Download to your specified folder
 client.retrieve(dataset, request).download('mslp/ERA_bob_mslp_1980_2024.nc')
