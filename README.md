@@ -15,7 +15,6 @@ This repository contains scripts that
 •	Translation speed
 •	Track length
 •	Storm direction
-
 04_1 Estimate storm radius and intensity using both threshold-based and double-exponential pressure profile methods.
 05	Match storm tracks with coastal tide gauge observations.
 06	Estimate geostrophic wind stress. Calculate storm-to-gauge distance and approach direction.
@@ -25,6 +24,7 @@ This repository contains scripts that
 Note: The numbers in front of descriptions are script numbers mentioned in ExtraTropicalWinterStorms/code/ 
 
 Data Sources
+
 ERA5 Reanalysis
 •	Variable: Mean Sea Level Pressure (MSLP)
 •	Temporal resolution: Hourly
@@ -37,9 +37,9 @@ NOAA CO-OPS Tide Gauges
 This work is supported by NSF project Award No - 2316271. 
 
 Python software
+
 All Python scripts required for processing, analyzing, and visualizing the data are located in the code/ directory. The scripts are extensively commented to make the workflow easy to understand and modify for your own applications.
 Before running the scripts, install the required Python packages listed in requirements.txt (or install the necessary dependencies manually using pip). Most scripts rely on common scientific Python libraries, including:
-
 numpy
 pandas
 matplotlib
@@ -55,6 +55,7 @@ pyarrow
 Detailed documentation, along with the well-documented example scripts and utility functions included in this repository, should provide everything needed to get started. If you encounter any issues or have questions about the code or workflow, please feel free to open a GitHub Issue or Email me.
 
 Suggested Citation
+
 If you use this repository in your research, please cite it as:
 
 Sadhukhan, B. (2026). ExtraTropicalWinterStorms: Python tools for analyzing extratropical cyclone tracks, storm surge, and tide gauge observations (Version 1.0) [Computer software]. GitHub. https://github.com/biplabsadhukhan/ExtraTropicalWinterStorms
