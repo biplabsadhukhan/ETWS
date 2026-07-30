@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: "ExtraTropicalWinterStorms"
+message: >
+  If you use this software in your research, please cite it using
+  the metadata provided in this file.
+type: software
+authors:
+  - family-names: "Sadhukhan"
+    given-names: "Biplab"
+    orcid: "https://orcid.org/0000-0003-0813-8031"
+
+version: "v1.0.1"
+doi: "https://doi.org/10.5281/zenodo.21709356"
+date-released: 2026-07-30
+repository-code: "https://github.com/biplabsadhukhan/ExtraTropicalWinterStorms"
+url: "https://github.com/biplabsadhukhan/ExtraTropicalWinterStorms"
+license: "MIT"
+keywords:
+  - extratropical cyclones
+  - storm tracking
+  - storm surge
+  - sea level
+  - atmospheric pressure
+  - ERA5
+  - coastal oceanography
+  - Python
+abstract: >
+  Python software for detecting, tracking, and characterizing
+  extratropical winter storms and analyzing their relationships with
+  storm surge and coastal sea-level variability using atmospheric
+  reanalysis and tide-gauge observations.
